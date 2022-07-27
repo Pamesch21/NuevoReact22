@@ -1,5 +1,6 @@
 import './ItemProduct.scss'
-import ItemCount from '../../ItemCount/ItemCount'
+import ItemCount from '../ItemCount/ItemCount';
+
 
 const ItemProduct = ({data}) => {
  
