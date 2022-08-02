@@ -3,9 +3,10 @@ const products = [
    {
     title: "mesa madera",
     price: 50000,
-    image: 'mesa 1.jps',
+    image: 'https://http2.mlstatic.com/D_NQ_NP_759429-MLA49426289526_032022-O.webp',
     stock:  5,
-    id: 1
+    id: 1,
+    modelo:  ' madera'
 } ,
 
 
@@ -13,13 +14,14 @@ const products = [
 
     title: "silla",
     price: 1000,
-    image: 'mesa 1.jps',
+    image: 'mesa 2.jps',
     stock:  4,
-    id: 2
+    id: 2,
+    modelo:  'hierro'
 }
 
-]
 
+]
 export default products
 
 
