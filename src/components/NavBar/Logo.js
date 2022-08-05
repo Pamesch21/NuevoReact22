@@ -1,12 +1,12 @@
 import React from 'react'
-import Logo from '../../assets/logo.jpg'
-
+import Logo from '../../assets/logo.jpg.jpg'
+import {Link} from 'react-router-dom'
 
 export function   ImgLogo() {
   return (
-    <div className='LogoContainer'>
+     <div className='LogoContainer'>
 
-        <img  className= 'Logo' src={Logo} alt="" />
+<Link to={"/"}> <img  className= 'Logo' src={Logo} alt="" /></Link>
 
     </div>
   )

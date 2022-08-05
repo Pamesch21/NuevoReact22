@@ -2,11 +2,12 @@ const products = [
    
    {
     title: "mesa madera",
-    price: 50000,
-    image: 'https://http2.mlstatic.com/D_NQ_NP_759429-MLA49426289526_032022-O.webp',
+    price: 5000,
+    image: 'https://ar.pinterest.com/pin/795729827910112734/',
     stock:  5,
     id: 1,
-    modelo:  ' madera'
+    modelo: 'madera',
+    category:'Mesa'
 } ,
 
 
@@ -14,10 +15,35 @@ const products = [
 
     title: "silla",
     price: 1000,
-    image: 'mesa 2.jps',
+    image: 'https://ar.pinterest.com/pin/543668986277230205/',
     stock:  4,
     id: 2,
-    modelo:  'hierro'
+    modelo:  'hierro',
+    category:'Silla'
+},
+
+
+{
+
+    title: "cajonera",
+    price: 4500,
+    image: 'https://ar.pinterest.com/pin/543668986277230205/',
+    stock: 6,
+    id: 3,
+    modelo:'madera',
+    category:'Cajonera'
+},
+
+{
+
+    title: "silla",
+    price: 4700,
+    image: 'https://ar.pinterest.com/pin/543668986277230205/',
+    stock: 2,
+    id: 4,
+    modelo:'madera',
+    category:'silla'
+
 }
 
 

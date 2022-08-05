@@ -5,7 +5,11 @@ import { useParams } from 'react-router-dom'
 
 
 const ItemDetailContainer = () => {
-    
+
+
+
+const {id}= useParams ()
+const filtradoId= products.filter ((products) => products.id === Number (id))
 
 const [Item, setItem]= useState ([])
 
@@ -13,10 +17,9 @@ const [Item, setItem]= useState ([])
 const getItem = () => new Promise ((resolve,reject) => {
         
     setTimeout (() => {
-        resolve (products[0])
+        resolve (filtradoId [0])
     },2000 )
 }
-
 
 )
 
@@ -33,10 +36,6 @@ console.log(error)
     }
     Itemawait ()
  },[])
-
-
-
-
 
 
     return (
