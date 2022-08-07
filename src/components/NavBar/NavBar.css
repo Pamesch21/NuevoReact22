@@ -9,3 +9,22 @@ height: 20px;
     width: 300px;
     height: 300px;
 }
+
+.LogoContainer {
+
+    width: 100px;
+    height:100px;
+}
+
+
+.Logo {
+
+    width: 200px;
+    height:100px;
+}
+
+
+
+.container-fluid{
+    background-color: rgb(255, 255, 255);
+}

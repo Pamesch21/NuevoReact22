@@ -3,7 +3,7 @@ const products = [
    {
     title: "mesa madera",
     price: 5000,
-    image: 'https://ar.pinterest.com/pin/795729827910112734/',
+    image: '../src/assets/mesa 1.jpg',
     stock:  5,
     id: 1,
     modelo: 'madera',
