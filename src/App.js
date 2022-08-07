@@ -1,7 +1,7 @@
 
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+
 import NavBar from './components/NavBar/NavBar';
-import Logo from './components/NavBar/Logo';
+
 import Home from './components/pages/Home'
 import Contacto from './components/pages/Contacto'
 import Productos from './components/pages/Productos'
@@ -10,9 +10,11 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Checkout from './components/pages/Checkout';
 import CartProvider from './components/context/CartContext';
 
+
 function App() {
   const styleApp = { padding: '10px 20px', }
   return (
+   
     <CartProvider>
     <BrowserRouter>
       <NavBar />

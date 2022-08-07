@@ -5,11 +5,25 @@ const CartContext= createContext ()
 
 const CartProvider= ({children } ) =>{
 
-const [name,setName]= useState('pamela')
+const [cartProducts,setCartProducts]= useState([])
 
+const addProductToCart =(product)=>{
+setCartProducts([...cartProducts, product])
+}
+
+const clear = () => {
+    setCartProducts([])
+}
+
+const data = {
+    cartProducts,
+    setCartProducts,
+    clear,
+    addProductToCart
+}
 
 return (
-<CartContext.Provider value={name} >
+<CartContext.Provider value={data}>
     
     {children}
     

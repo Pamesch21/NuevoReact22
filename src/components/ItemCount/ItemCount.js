@@ -1,6 +1,13 @@
-import React,{useState} from "react";
+import React,{useState, useContext} from "react";
+import { CartContext } from "../context/CartContext";
 
-const ItemCount = ({stock,setQuantitySelected}) =>  {
+
+
+
+
+const ItemCount = ({stock,setQuantitySelected,productData}) =>  {
+    
+    const {CartProducts, setCartProducts}= useContext(CartContext)
 
     let stockInicial = stock 
 
@@ -20,10 +27,9 @@ const ItemCount = ({stock,setQuantitySelected}) =>  {
         }
     }
     const onAdd = () => {
-
-   
-       
-        setQuantitySelected(contador)
+console.log("AGREGAR AL CARRITO:",productData)
+setQuantitySelected(contador)
+setCartProducts([productData])
         
        }
 
@@ -33,6 +39,7 @@ const ItemCount = ({stock,setQuantitySelected}) =>  {
              <button onClick={resta}>-</button> 
              <p>{contador}</p>
              <button onClick={addNumber}>+</button>
+             <button onClick={onAdd}>AGREGAR AL CARRITO</button>
               </div>
 
 
