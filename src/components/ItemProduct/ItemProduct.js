@@ -1,29 +1,44 @@
-import './ItemProduct.scss'
+import '../ItemProduct/ItemProduct.css'
 import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom'
-
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 const ItemProduct = ({data}) => {
  
-    const {title , price , stock, id,modelo} = data
+    const {title , price , stock, id,modelo,image} = data
    
     
 return (
     <Link to={`/detail/${id}`}>
+        <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={image} />
+      <Card.Body>
+        <Card.Title>Mesa</Card.Title>
+        <Card.Text>
+          mesas 
+        </Card.Text>
+        <Button variant="primary">$50000</Button>
+      </Card.Body>
+  
+ <button>Comprar</button>
+      <ItemCount stock={stock}/>
+    </Card>
     <div className="item-product">
-             <img src="/assets/mesa 1.jpg" alt="imagen producto" />
-             <p>{title}</p>
 
-             <span>{price}</span>
-
-             <ItemCount stock={stock}/>
+             <div className="image">
+                
              
-             <span>{modelo}</span>
-              <button>Comprar</button>
+             </div>
+ 
+         
     </div>
+    
     </Link>
+    
 )
 
 }
+
 export default ItemProduct
 

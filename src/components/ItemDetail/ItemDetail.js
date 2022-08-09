@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import ItemCount from "../ItemCount/ItemCount";
-
 import {Link } from 'react-router-dom';
 
 
@@ -20,7 +19,7 @@ const ItemDetail = ({data}) => {
 
 {console.log("quantitySelected: ", quantitySelected)}
     {
-        quantitySelected > 1 ? <button><Link to="/cart">TERMINAR COMPRA</Link></button> : <ItemCount setQuantitySelected={setQuantitySelected} productData={data}/>
+        quantitySelected > 1 ? <button><Link to="/cart">TERMINAR COMPRA</Link></button> : <ItemCount setQuantitySelected={setQuantitySelected} stock={data.stock}/>
     }
 
     

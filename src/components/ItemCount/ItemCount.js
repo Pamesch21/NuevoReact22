@@ -1,13 +1,12 @@
 import React,{useState, useContext} from "react";
 import { CartContext } from "../context/CartContext";
+import Button from 'react-bootstrap/Button';
 
 
 
-
-
-const ItemCount = ({stock,setQuantitySelected,productData}) =>  {
+const ItemCount = ({stock,setQuantitySelected}) =>  {
     
-    const {CartProducts, setCartProducts}= useContext(CartContext)
+    /*const {CartProducts, setCartProducts}= useContext(CartContext)*/
 
     let stockInicial = stock 
 
@@ -27,25 +26,23 @@ const ItemCount = ({stock,setQuantitySelected,productData}) =>  {
         }
     }
     const onAdd = () => {
-console.log("AGREGAR AL CARRITO:",productData)
+
 setQuantitySelected(contador)
-setCartProducts([productData])
+
         
        }
 
     return (
 
 <div className='countProd'> 
-             <button onClick={resta}>-</button> 
+         
              <p>{contador}</p>
-             <button onClick={addNumber}>+</button>
-             <button onClick={onAdd}>AGREGAR AL CARRITO</button>
+             <Button onClick={resta}>-</Button>
+             <Button onClick={addNumber}>+</Button>
+             <Button onClick={onAdd} size="lg">
+             AGREGAR AL CARRITO
+      </Button>
               </div>
-
-
-
-
-
     )
 }
 

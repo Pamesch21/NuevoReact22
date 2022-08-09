@@ -43,7 +43,7 @@ catch (error){
 
     return (
 
-        <div className="list-products" >
+        <div  >
               <h1>{title}</h1>
               <ItemList dataProducts={catalogo} /> 
             
