@@ -1,13 +1,14 @@
 import React from 'react'
  import CartWidget from "./CartWidget"
- 
+
  import {Link} from 'react-router-dom'
  import './NavBar.css';
  import  {Button} from '@mui/icons-material'
-
+import { FaBeer } from 'react-icons/fa';
 
 
 const NavBar = () => {
+  
   
 return (
    
@@ -59,6 +60,7 @@ return (
       </div>
       <CartWidget/>    </div>
   </div>
+  
 </nav>
 
  

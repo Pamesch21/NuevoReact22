@@ -2,15 +2,17 @@ import { createContext, useState} from "react";
 
 const CartContext= createContext ()
 
-
 const CartProvider= ({children } ) =>{
+    const [cartProducts,setCartProducts]= useState([])
+    
+    
+    
+    const addProductToCart =(product)=>{
+     
 
-const [cartProducts,setCartProducts]= useState([])
-
-const addProductToCart =(product)=>{
 setCartProducts([...cartProducts, product])
 }
-
+console.log (cartProducts)
 const clear = () => {
     setCartProducts([])
 }

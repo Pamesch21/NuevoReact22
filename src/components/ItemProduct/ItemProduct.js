@@ -21,7 +21,7 @@ return (
         <Button variant="primary">$50000</Button>
       </Card.Body>
   
- <button>Comprar</button>
+
       <ItemCount stock={stock}/>
     </Card>
     <div className="item-product">

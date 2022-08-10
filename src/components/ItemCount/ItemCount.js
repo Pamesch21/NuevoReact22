@@ -4,9 +4,10 @@ import Button from 'react-bootstrap/Button';
 
 
 
-const ItemCount = ({stock,setQuantitySelected}) =>  {
+const ItemCount = ({stock,setQuantitySelected,productdata,quantitySelected}) =>  {
     
-    /*const {CartProducts, setCartProducts}= useContext(CartContext)*/
+const {addProductToCart} = useContext(CartContext)
+    
 
     let stockInicial = stock 
 
@@ -26,6 +27,7 @@ const ItemCount = ({stock,setQuantitySelected}) =>  {
         }
     }
     const onAdd = () => {
+addProductToCart({...productdata,cantidad:contador})
 
 setQuantitySelected(contador)
 

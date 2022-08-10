@@ -1,8 +1,8 @@
 .image{
     width: 200px;
     height:200px;
-
-   
+    display: inline-block;
+    text-align: center;
 
 }
 
@@ -10,12 +10,16 @@
 
     width: 500px;
     height:500px;
+    display: inline-block;
+    text-align: center;
 }
 
 img {
     
     width: 200px;
     height:200px;
+    display: inline-block;
+    text-align: center;
 }
 
 
@@ -23,4 +27,7 @@ img {
 .list-products{
     width: 100px;
     height:200px;
+}.cart{
+    text-align: center;
+    display: inline-block;
 }

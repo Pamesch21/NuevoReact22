@@ -2,7 +2,9 @@ import React from 'react'
 import Logo from '../../assets/logo.jpg.jpg'
 import {Link} from 'react-router-dom'
 
-/*export function   ImgLogo() {
+
+
+export function   ImgLogo() {
   return (
      <div className='LogoContainer'>
 
@@ -10,5 +12,5 @@ import {Link} from 'react-router-dom'
 
     </div>
   )
-}*/
+}
 
