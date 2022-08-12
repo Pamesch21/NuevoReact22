@@ -15,7 +15,7 @@ return (
 <nav className="navbar bg-light">
   
   <div className="container-fluid">
-  <button variant="outlined" color="primary" >hola </button>
+ 
 
     <a className="navbar-brand" href="#">Muebles Sch</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">

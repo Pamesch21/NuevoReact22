@@ -1,33 +1,43 @@
 .image{
-    width: 200px;
-    height:200px;
+    width: 70%;
+    height:80%;
     display: inline-block;
     text-align: center;
 
 }
 
+.nav.navbar.bg-light{
+    width: 160%;
+
+
+}
+
+
 .item-product{
 
-    width: 500px;
-    height:500px;
+    width: 100%;
+    height:100%;
     display: inline-block;
     text-align: center;
 }
 
 img {
     
-    width: 200px;
-    height:200px;
+    width: 70%;
+    height:80%;
     display: inline-block;
     text-align: center;
 }
 
-
+.card{
+    width: 70%;
+    height:80%;
+    display: inline-block;
+    text-align: center; 
+}
 
 .list-products{
     width: 100px;
     height:200px;
-}.cart{
-    text-align: center;
-    display: inline-block;
+      text-align: center;
 }

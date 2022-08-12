@@ -5,17 +5,39 @@ const CartContext= createContext ()
 const CartProvider= ({children } ) =>{
     const [cartProducts,setCartProducts]= useState([])
     
-    
-    
     const addProductToCart =(product)=>{
-     
+
+    const duplicados = cartProducts.some(item=>item.id===product.id)
+    
+    if (duplicados==true){
+        const copiaArray = cartProducts.map ((item)=>{
+
+        
+            if (item.id===product.id) {
+
+                return {...item,cantidad:item.cantidad+product.cantidad,
+                }
+            }
+
+            else {return item}
+    
+        })
+        console.log(copiaArray)
+    setCartProducts(copiaArray)
+
+    }
+    else {setCartProducts([...cartProducts,product])} 
+  
+
 
 setCartProducts([...cartProducts, product])
 }
-console.log (cartProducts)
+
 const clear = () => {
     setCartProducts([])
 }
+
+
 
 const data = {
     cartProducts,
