@@ -1,6 +1,5 @@
 import React from 'react'
  import CartWidget from "./CartWidget"
-
  import {Link} from 'react-router-dom'
  import './NavBar.css';
  import  {Button} from '@mui/icons-material'
@@ -17,7 +16,7 @@ return (
   <div className="container-fluid">
  
 
-    <a className="navbar-brand" href="#">Muebles Sch</a>
+    <a className="navbar-brand" href="#">Muebles Sch</a>  <CartWidget/> 
     <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -58,9 +57,10 @@ return (
           <button className="btn btn-outline-success" type="submit">Buscar</button>
         </form>
       </div>
-      <CartWidget/>    </div>
+        </div>
+     
   </div>
-  
+
 </nav>
 
  

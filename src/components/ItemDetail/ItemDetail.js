@@ -10,10 +10,8 @@ const ItemDetail = ({data}) => {
 
 <div className="item-product">
 < img src= {data.image} alt ="imagen"/>
-
 <span>{data.price}</span>
 <span>{data.modelo}</span>
-
 
 
     {
