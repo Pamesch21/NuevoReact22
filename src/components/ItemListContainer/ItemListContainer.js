@@ -4,7 +4,7 @@ import React, {useState, useEffect} from 'react'
 import ItemList from "../ItemList/ItemList";
 import { useParams } from 'react-router-dom';
 import db from "../../components/utils/firebaseConfig"
-import { collection, getDocs } from "firebase/firestore"
+import { collection, getDocs, where, query } from "firebase/firestore"
 
 
 
@@ -15,41 +15,46 @@ const ItemListContainer = ({title})=> {
 
     
 const {categoryid}= useParams ()
-const filtradoCategoria= products.filter ((products) => products.category === categoryid)
 
-    const getProducts = () => new Promise ((resolve,reject) => {
-        
-        setTimeout (() => {
-     if (categoryid) {
-       resolve (filtradoCategoria)
 
-    }else {resolve  (products)} },2000 )} )
 
-   //const getProducts = async () => {
-   // const productCollection = collection(db, 'productos')
-   // const productSnapshot = await getDocs(productCollection)
-   // const productList = productSnapshot.docs.map( (doc) => {
-   //     let product = doc.data()
-     //   product.id = doc.id
-    //    return product
-  //  })
-    //return productList
-//}//
+   const getProducts = async () => {
+    const productCollection = categoryid ? query ( collection(db, 'productos'),where ("category","==",categoryid) )
+    :
+    collection(db, 'productos')
 
-    useEffect(()=> {
-        const getProduct = async () => {
-try {
-    const responseLog = await getProducts()
-    setcatalogo(responseLog)
-    
+
+    const productSnapshot = await getDocs(productCollection)
+    const productList = productSnapshot.docs.map( (doc) => {
+      let product = doc.data()
+        product.id = doc.id
+        return product
+
+       
+
+   })
+    return productList
+
 }
 
-catch (error){
-    console.log(error)
-}
-        }
-        getProduct ()
-     },[categoryid])
+useEffect (() => {
+ const getProduct = async () => {
+ try{
+    const Log = await getProducts () 
+    setcatalogo(Log)
+    console.log(Log)
+ }
+
+ catch (error ) {
+    console.log (error)
+ }
+ }
+
+getProduct ()
+},[categoryid]) //eslint-disable-line react-hooks/exhaustive-deps
+
+
+      
 
     return (
 
