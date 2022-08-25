@@ -1,5 +1,4 @@
 
-import products from '../../components/utils/products.mock'
 import React, {useState, useEffect} from 'react'
 import ItemList from "../ItemList/ItemList";
 import { useParams } from 'react-router-dom';

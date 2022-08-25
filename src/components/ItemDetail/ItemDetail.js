@@ -4,7 +4,7 @@ import {Link } from 'react-router-dom';
 import React, { useState, useContext } from "react";
 
 const ItemDetail = ({data}) => {
-    const [quantitySelected,setQuantitySelected] = useState (0)
+    
 
     return (
 
@@ -14,17 +14,12 @@ const ItemDetail = ({data}) => {
 <span>{data.modelo}</span>
 
 
-    {
-        quantitySelected > 1 ? <button><Link to="/cart">TERMINAR COMPRA</Link></button> :
-         <ItemCount setQuantitySelected={setQuantitySelected} stock={data.stock}  productdata={data} quantitySelected={quantitySelected} />
-    }
+    
+         <button><Link to="/cart">TERMINAR COMPRA</Link></button> :
+         <ItemCount stock={data.stock}  productdata={data}  />
+    
 
 </div>
-
-
-
-
-
 
     )
 }

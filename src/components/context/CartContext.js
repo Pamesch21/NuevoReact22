@@ -7,9 +7,9 @@ const CartProvider= ({children } ) =>{
     
     const addProductToCart =(product)=>{
 
-    const duplicados = cartProducts.some(item=>item.id===product.id)
+    const duplicados = cartProducts.find(item=>item.id===product.id)
     
-    if (duplicados==true){
+    if (duplicados){
         const copiaArray = cartProducts.map ((item)=>{
 
         
@@ -27,14 +27,17 @@ const CartProvider= ({children } ) =>{
 
     }
     else {setCartProducts([...cartProducts,product])} 
-  
 
-
-setCartProducts([...cartProducts, product])
 }
 
 const clear = () => {
     setCartProducts([])
+}
+
+const remove = (id) => {
+   const newcart = cartProducts.filter (product => product.id !==id) 
+   setCartProducts (newcart) 
+
 }
 
 
@@ -43,7 +46,8 @@ const data = {
     cartProducts,
     setCartProducts,
     clear,
-    addProductToCart
+    addProductToCart,
+    remove
 }
 
 return (
