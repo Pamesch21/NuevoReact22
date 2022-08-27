@@ -4,7 +4,9 @@ const CartContext= createContext ()
 
 const CartProvider= ({children } ) =>{
     const [cartProducts,setCartProducts]= useState([])
-    
+    const [totalPrice, settotalPrice] = useState (0)
+
+
     const addProductToCart =(product)=>{
 
     const duplicados = cartProducts.find(item=>item.id===product.id)
@@ -27,19 +29,23 @@ const CartProvider= ({children } ) =>{
 
     }
     else {setCartProducts([...cartProducts,product])} 
-
+settotalPrice (totalPrice + product.cantidad * product.price)
+console.log ("a",product.price)
 }
 
 const clear = () => {
     setCartProducts([])
+    settotalPrice (0)
 }
 
 const remove = (id) => {
-   const newcart = cartProducts.filter (product => product.id !==id) 
+   const newcart = cartProducts.filter (product => product.id !==id)
+   const prod = cartProducts.find (product => product.id ===id) 
+   settotalPrice (totalPrice - prod.cantidad * prod.price)
    setCartProducts (newcart) 
 
-}
 
+}
 
 
 const data = {
@@ -47,7 +53,8 @@ const data = {
     setCartProducts,
     clear,
     addProductToCart,
-    remove
+    remove,
+    totalPrice
 }
 
 return (

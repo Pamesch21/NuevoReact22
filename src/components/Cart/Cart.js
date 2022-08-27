@@ -1,29 +1,17 @@
 import {useContext, useState} from "react"
 import { CartContext } from "../context/CartContext"
 import Modal from "../../components/Modal/Modal"
-import { async } from "@firebase/util"
 import { collection,addDoc } from "firebase/firestore"
 import db from "../utils/firebaseConfig"
 
 
-
-
 const Cart= (   ) =>{
-const {cartProducts,clear,remove} = useContext (CartContext)
-
-
+const {cartProducts,clear,remove,totalPrice} = useContext (CartContext)
 const [ModalMostrar, setModalMostrar] = useState (false)
+console.log(totalPrice)
 const [CompraConf, setCompraConf] = useState ()
-const [formData, setformdata] = useState({
 
-   name: '',
-   phone:'',
-   email:'',
- 
- 
- })
-
- const [order] = useState({
+const [order] = useState({
    items: cartProducts.map((product) =>{
      return{
         id: product.id,
@@ -33,8 +21,17 @@ const [formData, setformdata] = useState({
    
     buyer: {},
     date: new Date().toLocaleString(),
-   total: totalPrice
+    total: totalPrice
 })
+const [formData, setformdata] = useState({
+
+   name: '',
+   phone:'',
+   email:'',
+ 
+ 
+ })
+
 
 const handleModal = (handle) => {
    handle === true ? setModalMostrar (true) : setModalMostrar (false)}
@@ -42,10 +39,8 @@ const handleModal = (handle) => {
    
    const handleChange = (e)  => {
       
+      setformdata ({...formData,[e.target.name]:e.target.value}) 
    }
-   setformdata ({...formData,[e.target.name]:e.target.value}) 
-
-   
    
    const sendData = (e) => {e.preventDefault ()  
       pushData ({...order,buyer:formData}) 
@@ -54,6 +49,7 @@ const handleModal = (handle) => {
    const pushData = async (newOrder) => {
 const collectionOrder = collection (db, 'ordenes') 
 const orderDoc = await addDoc (collectionOrder, newOrder)
+console.log (orderDoc)
 setCompraConf (orderDoc.id)
    }
    return ( 
@@ -68,12 +64,13 @@ setCompraConf (orderDoc.id)
     <img src= {product.image} alt ="imagen"/>
     <span>{product.cantidad}</span>
     <span>{product.price}</span>
+    <span>{totalPrice}</span>
     <span>{product.modelo}</span>
     <button onClick={clear}>Vaciar carrito</button>
     <button onClick={remove}>Borrar</button>
     
     </div>) ) : <h1>Hola mundo </h1>
-     } <button onClick={() => handleModal (true)}>TERMINAR COMPRA</button>
+     }
  
  
 {ModalMostrar &&
@@ -91,9 +88,6 @@ setCompraConf (orderDoc.id)
 </h3>
 </>
 
-
-
-
      ): ( <form onSubmit={sendData}>
       <input 
                type="text" 
@@ -104,7 +98,7 @@ setCompraConf (orderDoc.id)
                />
      
      <input 
-               type="text" 
+               type="number" 
                name = 'phone' 
                onChange={handleChange}
                placeholder="phone"
