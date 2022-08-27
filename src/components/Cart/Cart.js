@@ -70,8 +70,10 @@ setCompraConf (orderDoc.id)
     <button onClick={remove}>Borrar</button>
     
     </div>) ) : <h1>Hola mundo </h1>
-     }
- 
+     } 
+
+ { cartProducts.length > 0 && 
+   <button onClick={() => handleModal (true)}>TERMINAR COMPRA</button> }
  
 {ModalMostrar &&
  <Modal close={handleModal}>
