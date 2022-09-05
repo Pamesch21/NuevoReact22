@@ -3,7 +3,7 @@ import { CartContext } from "../context/CartContext"
 import Modal from "../../components/Modal/Modal"
 import { collection,addDoc } from "firebase/firestore"
 import db from "../utils/firebaseConfig"
-
+import Button from 'react-bootstrap/Button';
 
 const Cart= (   ) =>{
 const {cartProducts,clear,remove,totalPrice} = useContext (CartContext)
@@ -61,19 +61,33 @@ setCompraConf (orderDoc.id)
 
 
     (<div key={product.id}><div className="item-product"></div>
-    <img src= {product.image} alt ="imagen"/>
-    <span>{product.cantidad}</span>
-    <span>{product.price}</span>
-    <span>{totalPrice}</span>
-    <span>{product.modelo}</span>
-    <button onClick={clear}>Vaciar carrito</button>
-    <button onClick={remove}>Borrar</button>
-    
-    </div>) ) : <h1>Hola mundo </h1>
+
+
+
+<div className="cart"><img className="imagenes" src= {product.image} alt ="imagen"/>
+
+<span>{product.cantidad}</span>
+    <Button variant="outline-success">{product.price}</Button>
+    <Button variant="outline-success">{totalPrice}</Button>
+
+
+</div>
+
+
+
+
+
+    <div className= "VaciarCarrito">
+    <Button variant="outline-primary" onClick={clear}>Vaciar carrito</Button>
+    </div>
+
+    <Button variant="outline-danger" onClick={remove}>Borrar</Button>
+ 
+    </div>) ) : <h1>Carrito vacio</h1>
      } 
 
  { cartProducts.length > 0 && 
-   <button onClick={() => handleModal (true)}>TERMINAR COMPRA</button> }
+  <Button variant="primary" size="lg" onClick={() => handleModal (true)}>TERMINAR COMPRA</Button> }
  
 {ModalMostrar &&
  <Modal close={handleModal}>
@@ -82,7 +96,7 @@ setCompraConf (orderDoc.id)
 
 <>
 <h2>
-   su orden se genero correctamente
+   Su orden se genero correctamente
 </h2>
 
 <h3>
@@ -114,7 +128,7 @@ setCompraConf (orderDoc.id)
                placeholder="ingresar email"
                value = {formData.email}
                />
-                   <button type= "sumbit">Enviar info</button>
+                 <Button variant="outline-danger">Enviar info</Button>
      
      </form>)
    }

@@ -1,8 +1,8 @@
 .image{
-    width: 70%;
-    height:80%;
-    display: inline-block;
-    text-align: center;
+ display: flex;
+ padding: 300px;
+ margin: 100px;
+
 
 }
 
@@ -19,6 +19,7 @@
     height:100%;
     display: inline-block;
     text-align: center;
+    padding-top: 30px;
 }
 
 img {

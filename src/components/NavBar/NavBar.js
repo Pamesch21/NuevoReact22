@@ -2,8 +2,8 @@ import React from 'react'
  import CartWidget from "./CartWidget"
  import {Link} from 'react-router-dom'
  import './NavBar.css';
- import  {Button} from '@mui/icons-material'
-import { FaBeer } from 'react-icons/fa';
+import Logo from './Logo';
+
 
 
 const NavBar = () => {
@@ -18,7 +18,7 @@ return (
 
     <a className="navbar-brand" href="#">Muebles Sch</a>  <CartWidget/> 
     <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-      <span className="navbar-toggler-icon"></span>
+      <span className="navbar-toggler-icon"></span>  <Logo/> 
     </button>
     <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div className="offcanvas-header">

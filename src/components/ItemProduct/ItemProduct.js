@@ -11,26 +11,24 @@ const ItemProduct = ({data}) => {
     
 return (
     <Link to={`/detail/${id}`}>
-        <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={image} />
+    
+    <div className="item-product">
+
+
+    <Card style={{ width: '18rem' }}>
+  <Card.Img variant="top" src={image} />
       <Card.Body>
-        <Card.Title>Mesa</Card.Title>
+        <Card.Title>{title}</Card.Title> 
         <Card.Text>
-          mesas 
+        {modelo}
         </Card.Text>
-        <Button variant="primary">$50000</Button>
+        <Button variant="primary">{price}</Button>
       </Card.Body>
   
 
-      <ItemCount stock={stock}/>
     </Card>
-    <div className="item-product">
-
-             <div className="image">
-                
-             
-             </div>
- 
+         
+         
          
     </div>
     

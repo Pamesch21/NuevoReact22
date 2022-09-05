@@ -1,16 +1,17 @@
 import React from 'react'
-import Logo from '../../assets/logo.jpg.jpg'
+import Logo1 from 'assets/logo.jpg'
 import {Link} from 'react-router-dom'
 
 
 
-export function   ImgLogo() {
+const  Logo = ()  => {
   return (
-     <div className='LogoContainer'>
+  
 
-<Link to={"/"}> <img  className= 'Logo' src={Logo} alt="" /></Link>
+<Link to={"/"}> <img  className= 'Logo' src={Logo1} alt="" /></Link>
 
-    </div>
+
   )
 }
 
+export default Logo 

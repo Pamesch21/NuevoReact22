@@ -1,0 +1,19 @@
+.item-product {
+    height: min-content;
+    width: 40%;
+    display: -webkit-box;
+    margin: 100px;
+}
+
+.VaciarCarrito {
+        height: max-content;
+        width: 100%;
+}
+
+.imagenes {
+    padding: 20px;
+    margin: bottom 50px;
+    display:webkit-box;
+    margin: 100px;
+}
+
