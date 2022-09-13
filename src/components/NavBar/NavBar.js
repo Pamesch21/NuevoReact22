@@ -16,13 +16,14 @@ return (
   <div className="container-fluid">
  
 
-    <a className="navbar-brand" href="#">Muebles Sch</a>  <CartWidget/> 
+  <Logo/>  
+  
     <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-      <span className="navbar-toggler-icon"></span>  <Logo/> 
+      <span className="navbar-toggler-icon"></span>  
     </button>
     <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div className="offcanvas-header">
-        <h5 className="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+        <h5 className="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5> 
         <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div className="offcanvas-body">
@@ -38,7 +39,7 @@ return (
           <li className="nav-item dropdown">
             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Productos
-            </a>
+            </a> <CartWidget/>
             <ul className="dropdown-menu">
    
     

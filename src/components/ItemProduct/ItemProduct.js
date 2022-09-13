@@ -16,7 +16,7 @@ return (
 
 
     <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src={image} />
+  <Card.Img className="imgitem" variant="top"  src={image} />
       <Card.Body>
         <Card.Title>{title}</Card.Title> 
         <Card.Text>

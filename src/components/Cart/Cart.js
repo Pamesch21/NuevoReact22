@@ -4,6 +4,7 @@ import Modal from "../../components/Modal/Modal"
 import { collection,addDoc } from "firebase/firestore"
 import db from "../utils/firebaseConfig"
 import Button from 'react-bootstrap/Button';
+import '../Cart/Cart.css'
 
 const Cart= (   ) =>{
 const {cartProducts,clear,remove,totalPrice} = useContext (CartContext)
@@ -64,24 +65,27 @@ setCompraConf (orderDoc.id)
 
 
 
+
 <div className="cart"><img className="imagenes" src= {product.image} alt ="imagen"/>
 
+
 <span>{product.cantidad}</span>
-    <Button variant="outline-success">{product.price}</Button>
-    <Button variant="outline-success">{totalPrice}</Button>
+
+<Button variant="outline-success">Total : ${totalPrice}  </Button>
+  
+{product.price}$
 
 
 </div>
 
 
-
-
-
     <div className= "VaciarCarrito">
-    <Button variant="outline-primary" onClick={clear}>Vaciar carrito</Button>
+    <Button variant="outline-primary" onClick={clear}>Vaciar carrito</Button>  
+      <Button variant="outline-danger" onClick={remove}>Borrar</Button> 
+     
     </div>
 
-    <Button variant="outline-danger" onClick={remove}>Borrar</Button>
+
  
     </div>) ) : <h1>Carrito vacio</h1>
      } 

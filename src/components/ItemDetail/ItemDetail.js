@@ -21,7 +21,7 @@ const ItemDetail = ({data}) => {
 <h2>
   Mesa Lux
 </h2>
-<Button variant="outline-success">{data.price}</Button>
+<Button variant="outline-success">$ {data.price}</Button>
 
 </div>
 
@@ -32,9 +32,9 @@ const ItemDetail = ({data}) => {
 
 
 <div className="Boton">
-<Button variant="light"><Link to="/cart">TERMINAR COMPRA</Link></Button>
- </div>   
 
+ </div>   
+ <Button variant="light"><Link to="/cart">TERMINAR COMPRA</Link></Button>
 </div>
 
     )
